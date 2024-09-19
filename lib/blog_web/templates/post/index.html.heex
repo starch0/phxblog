@@ -1,0 +1,12 @@
+<div class="posts">
+    <h1>Posts</h1>
+    <ul>
+      <%= for post <- @posts do %>
+        <li>
+          <h2><a href="<%= Routes.post_path(@conn, :show, post) %>"><%= post.title %></a></h2>
+          <p><%= post.body |> String.slice(0..100) %>...</p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  
